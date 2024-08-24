@@ -1,27 +1,6 @@
 {
   "users": [
     {
-      "id": "1",
-      "name": "Sushil Shrestha updated",
-      "username": "sushil",
-      "email": "shresthasushil741@gmail.com",
-      "phone": "+977 9826121012"
-    },
-    {
-      "id": "2",
-      "name": "Aarav Thapa",
-      "username": "aaravthapa",
-      "email": "aarav.thapa123@gmail.com",
-      "phone": "+977 9801234567"
-    },
-    {
-      "id": "3",
-      "name": "Prashant Koirala",
-      "username": "prashant",
-      "email": "prashant.koirala@gmail.com",
-      "phone": "+977 9812345678"
-    },
-    {
       "id": "4",
       "name": "Nirjala Pandey",
       "username": "nirjala",
@@ -56,12 +35,6 @@
       "phone": "9826121012"
     },
     {
-      "id": "9",
-      "name": "Sushil Shrestha II",
-      "email": "superadmin@gmail.com",
-      "phone": "9826133030"
-    },
-    {
       "id": "10",
       "name": "Sushil Shrestha II",
       "email": "superadmin@gmail.com",
@@ -70,12 +43,6 @@
     {
       "id": "fc40",
       "name": "Sushil Shrestha II",
-      "email": "shresthasushil741@gmail.com",
-      "phone": "9826133030"
-    },
-    {
-      "id": "da64",
-      "name": "Sugam Shrestha",
       "email": "shresthasushil741@gmail.com",
       "phone": "9826133030"
     }

@@ -1,9 +1,10 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Home = () => {
     const [data, setData] = useState([]);
+    const navigate = useNavigate();
     
     useEffect(() => {
         axios.get('http://localhost:3000/users')
@@ -25,6 +26,17 @@ const Home = () => {
     const prevPage = () => {
         setCurrentPage(prevPage => prevPage - 1);
     };
+
+    const handleDelete = (id) =>{
+        const confirm = window.confirm("Would you like to delete?");
+        if(confirm){
+            axios.delete('http://localhost:3000/users/'+id)
+            .then(res =>{
+                location.reload()
+            })
+            .catch(err => console.log(err))
+        }
+    }
 
     return (
         <div className='d-flex flex-column justify-content-center align-items-center bg-light vh-100'>
@@ -53,7 +65,7 @@ const Home = () => {
                                 <td>
                                     <Link to={`read/${d.id}`} className='btn btn-sm btn-secondary mx-1 my-2'>Read</Link>
                                     <Link to={`update/${d.id}`} className='btn btn-sm btn-primary mx-2'>Edit</Link>
-                                    <button className='btn btn-sm btn-danger'>Delete</button>
+                                    <button onClick={e => handleDelete(d.id)} className='btn btn-sm btn-danger'>Delete</button>
                                 </td>
                             </tr>
                         ))}
