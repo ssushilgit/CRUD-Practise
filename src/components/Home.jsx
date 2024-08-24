@@ -4,15 +4,16 @@ import { Link } from 'react-router-dom';
 
 const Home = () => {
     const [data, setData] = useState([]);
-    const [currentPage, setCurrentPage] = useState(1);
-    const itemsPerPage = 5;
-
+    
     useEffect(() => {
         axios.get('http://localhost:3000/users')
-            .then(res => setData(res.data))
-            .catch(err => console.log(err));
+        .then(res => setData(res.data))
+        .catch(err => console.log(err));
     }, []);
-
+    
+    const [currentPage, setCurrentPage] = useState(1);
+    const itemsPerPage = 5;
+    
     const lastItem = currentPage * itemsPerPage;
     const firstItem = lastItem - itemsPerPage;
     const currentItems = data.slice(firstItem, lastItem);
@@ -51,7 +52,7 @@ const Home = () => {
                                 <td>{d.phone}</td>
                                 <td>
                                     <Link to={`read/${d.id}`} className='btn btn-sm btn-secondary mx-1 my-2'>Read</Link>
-                                    <button className='btn btn-sm btn-primary mx-2'>Edit</button>
+                                    <Link to={`update/${d.id}`} className='btn btn-sm btn-primary mx-2'>Edit</Link>
                                     <button className='btn btn-sm btn-danger'>Delete</button>
                                 </td>
                             </tr>
